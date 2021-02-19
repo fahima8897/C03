@@ -1,35 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fboumell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/16 13:04:37 by fboumell          #+#    #+#             */
-/*   Updated: 2021/02/18 11:48:18 by fboumell         ###   ########.fr       */
+/*   Created: 2021/02/17 12:45:59 by fboumell          #+#    #+#             */
+/*   Updated: 2021/02/17 13:49:52 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+char	*ft_strstr(char *str, char *to_find)
 {
-	unsigned int i;
+	int i;
+	int n;
 
+	if (*to_find == '\0')
+		return (str);
 	i = 0;
-	while ((s1[i] || s2[i]) && i < n)
-	{		
-			if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-			i++;
+	while (str[i])
+	{
+		n = 0;
+		while (to_find[n] == str[i + n])
+		{
+			if (to_find[n + 1] == '\0')
+				return (str + i);
+			n++;
+		}
+		i++;
 	}
 	return (0);
 }
 
 #include <stdio.h>
 
-int main()
+int	main()
 {
-	char tab1[] = "";
-	char tab2[] = "helno";
-	printf("%d\n", ft_strncmp(tab1, tab2, 2));
+	char tab[] = "hello tout le monde la vie est une chienne";
+	char tofind[] = "le monde";
+	printf("%s\n", ft_strstr(tab, tofind));
 	return 0;
 }
