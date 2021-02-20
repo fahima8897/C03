@@ -6,7 +6,7 @@
 /*   By: fboumell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 13:28:35 by fboumell          #+#    #+#             */
-/*   Updated: 2021/02/17 12:41:53 by fboumell         ###   ########.fr       */
+/*   Updated: 2021/02/19 15:26:28 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,4 @@ char	*ft_strcat(char *dest, char *src)
 	}
 	dest[i + n] = '\0';
 	return (dest);
-}
-
-#include <stdio.h>
-
-int	main()
-{
-	char src[] = "sunshine";
-	char dest[] = "moon";
-	printf("%s\n", ft_strcat(dest, src));
-	return (0);
 }

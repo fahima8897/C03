@@ -6,7 +6,7 @@
 /*   By: fboumell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 12:45:59 by fboumell          #+#    #+#             */
-/*   Updated: 2021/02/17 13:49:52 by fboumell         ###   ########.fr       */
+/*   Updated: 2021/02/20 09:09:34 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,4 @@ char	*ft_strstr(char *str, char *to_find)
 		i++;
 	}
 	return (0);
-}
-
-#include <stdio.h>
-
-int	main()
-{
-	char tab[] = "hello tout le monde la vie est une chienne";
-	char tofind[] = "le monde";
-	printf("%s\n", ft_strstr(tab, tofind));
-	return 0;
 }
